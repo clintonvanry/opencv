@@ -9,6 +9,7 @@
 // additional includes $(OPENCV_DIR)\..\..\include
 // linker / libs section $(OPENCV_DIR)\lib
 // additional inputs in the linker section  $(OPENCV_DIR)\lib\opencv_world412d.lib $(OPENCV_DIR)\bin\opencv_world412d.dll
+// xcopy /y /d "$(OPENCV_DIR)\bin\*.dll" "$(ProjectDir)$(OutDir)"
 
 #include <iostream>
 #include <opencv2/core.hpp>
@@ -21,7 +22,7 @@ using namespace std;
 int main()
 {
     std::cout << "Hello World!\n";
-	auto filePath =  R"(D:\personalGitHub\opencv\opencv\environmentSetupTest\clock.jpg)"s;
+	auto filePath =  R"(../environmentSetupTest/clock.jpg)"s;
 	auto img = imread(filePath, IMREAD_COLOR);
 
 	if(img.empty())
